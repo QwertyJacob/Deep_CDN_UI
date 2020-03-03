@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dokerized_ui" type="NodeJSConfigurationType" path-to-node="docker://node:latest/node" path-to-js-file="bin/www" working-dir="$PROJECT_DIR$">
+    <envs>
+      <env name="DEBUG" value="deep-cdn-ui:*" />
+    </envs>
+    <EXTENSION ID="com.jetbrains.nodejs.remote.docker.NodeJSDockerRunConfigurationExtension" Node.JS.Docker.Generate.Image="true">
+      <option name="portBindings">
+        <list>
+          <DockerPortBindingImpl>
+            <option name="containerPort" value="3000" />
+            <option name="hostIp" value="localhost" />
+            <option name="hostPort" value="3012" />
+          </DockerPortBindingImpl>
+        </list>
+      </option>
+    </EXTENSION>
+    <method v="2" />
+  </configuration>
+</component>
