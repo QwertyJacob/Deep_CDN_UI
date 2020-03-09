@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const { Kafka } = require('kafkajs');
 
-var longpoll = require('express-longpoll')(router, { DEBUG: true });
+var longpoll = require('express-longpoll')(router);
 longpoll.create('/cp');
 
 
@@ -33,7 +33,7 @@ const run = async () => {
     clientId: 'deep-cdn-ui',
     brokers: ['kafka_kafkanet:9092']
   });
-  const consumer = kafka.consumer({ groupId: 'hhkfqawqmzqqqwfq' });
+  const consumer = kafka.consumer({ groupId: 'jesusito' });
   // Consuming
   await consumer.connect();
   await consumer.subscribe({ topic: 'channel_performance', fromBeginning: true });
@@ -46,13 +46,13 @@ const run = async () => {
          key: message.key.toString(),
          value: message.value.toString(),
        });*/
-      await sleep(200);
+      await sleep(8000);
       let keyObject = JSON.parse(message.key.toString());
       keyObject = proccessKey(keyObject);
       keyObject['offset']= parseInt(message.offset);
       let valueObject = JSON.parse(message.value.toString());
       let wholeObject = extend(keyObject,valueObject);
-      //console.log("processed record: ", wholeObject);
+      console.log( wholeObject);
       longpoll.publish("/cp", wholeObject);
 
     },

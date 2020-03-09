@@ -4,10 +4,10 @@
 var poll = function () {
     $.ajax({
         url: "/cp",
-        success: function(data){
-            console.log("received from backend:",data); // { text: "Some data" } -> will be printed in your browser console
-            pivot.updateData(
-                {data: data},
+        success: function(new_record){
+            console.log("received from backend:",new_record); // { text: "Some data" } -> will be printed in your browser console
+            flexmonster.updateData(
+                {data: [new_record]},
                 {partial: true});
             poll();
         },
