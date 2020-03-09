@@ -4,6 +4,7 @@
       <env name="DEBUG" value="deep-cdn-ui:*" />
     </envs>
     <EXTENSION ID="com.jetbrains.nodejs.remote.docker.NodeJSDockerRunConfigurationExtension" Node.JS.Docker.Generate.Image="true">
+      <option name="networkMode" value="kafka-net" />
       <option name="portBindings">
         <list>
           <DockerPortBindingImpl>
@@ -13,6 +14,9 @@
           </DockerPortBindingImpl>
         </list>
       </option>
+    </EXTENSION>
+    <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+      <browser url="http://localhost:3012" />
     </EXTENSION>
     <method v="2" />
   </configuration>

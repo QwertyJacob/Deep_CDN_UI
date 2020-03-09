@@ -1,0 +1,42 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="New_deep_cdn_ui" type="docker-deploy" factoryName="docker-image" server-name="Docker">
+    <deployment type="docker-image">
+      <settings>
+        <option name="command" value="node /opt/project/bin/www" />
+        <option name="containerName" value="new_deep_cdn_ui" />
+        <option name="entrypoint" value="" />
+        <option name="envVars">
+          <list>
+            <DockerEnvVarImpl>
+              <option name="name" value="DEBUG" />
+              <option name="value" value="deep-cdn-ui:*" />
+            </DockerEnvVarImpl>
+          </list>
+        </option>
+        <option name="imageTag" value="node:latest" />
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="3000" />
+              <option name="hostPort" value="3000" />
+            </DockerPortBindingImpl>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="3033" />
+              <option name="hostPort" value="3033" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="commandLineOptions" value=" --network kafka-net " />
+        <option name="volumeBindings">
+          <list>
+            <DockerVolumeBindingImpl>
+              <option name="containerPath" value="/opt/project" />
+              <option name="hostPath" value="C:\Users\Jesus\WebstormProjects\Deep_CDN_UI" />
+            </DockerVolumeBindingImpl>
+          </list>
+        </option>
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

@@ -3,3 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+  link(href='/flexmonster/flexmonster.css')
+  script(src='/flexmonster/flexmonster.js')
+  div(id='pivotContainer')
+  script(src='/javascripts/pivotInitializer.js')
+  script(src='/javascripts/kafkaclient.js')
+
