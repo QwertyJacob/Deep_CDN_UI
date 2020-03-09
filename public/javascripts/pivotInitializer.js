@@ -1,6 +1,6 @@
 cp_headers_array =  [{
-    "windowstart": {"type": "string"},
-    "windowend": {"type": "string"},
+    "windowstart": {"type": "datetime"},
+    "windowend": {"type": "datetime"},
     "channel": {"type": "number"},
     "node_id": {"type": "string"},
     "offset": {"type": "id"},

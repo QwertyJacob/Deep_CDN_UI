@@ -46,7 +46,7 @@ const run = async () => {
          key: message.key.toString(),
          value: message.value.toString(),
        });*/
-      await sleep(8000);
+      await sleep(1000);
       let keyObject = JSON.parse(message.key.toString());
       keyObject = proccessKey(keyObject);
       keyObject['offset']= parseInt(message.offset);
